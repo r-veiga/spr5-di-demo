@@ -6,7 +6,7 @@ import org.springframework.stereotype.Controller;
 public class MyController {
 
 	public String hello() {
-		System.out.println("Hello, this returned from a @Controller method.");
-		return "Hello, hello";
+		System.out.println("Esto se ha escrito desde el interior de un @Controller method.");
+		return "Hello es hola";
 	}
 }
