@@ -34,8 +34,10 @@ Codificaré los tres tipos de inyección en sendas clases del paquete:
 2 - InyeccionMedianteSetterController
 3 - InyeccionMediantePropiedadController
 
-Uso la anotación de Spring @Qualifier para especificar qué implementación hija del interfaz inyectado voy a usar.
-
+En los Controller estoy usando la anotación de Spring @Qualifier en el momento de inyectarles su propiedad 
+del tipo GreetingService, de modo que pueda especificar cuál de sus implementaciones emplear.
+Este tipo de situaciones, distintas implementaciones, también puede afrontarse con el uso de la anotación @Primary 
+en una de las implementaciones para que sea la que se elija por defecto cuando no se explicita @Qualifier, evitando un runtime error.
 
 Sinceramente, se podría exponer los tipos de inyección de dependencias sin usar el framework Spring. 
 
