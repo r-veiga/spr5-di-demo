@@ -20,7 +20,7 @@ public class InyeccionMedianteSetterController {
 	}
 	
 	@Autowired
-	public void setGreetingService(@Qualifier("SetterGreetingService") GreetingService greetingService) {
+	public void setGreetingService(@Qualifier("setterGreetingService") GreetingService greetingService) {
 		this.greetingService = greetingService;
 	}
 }

@@ -8,6 +8,7 @@ import guru.springframework.spr5didemo.controllers.InyeccionMedianteConstructorC
 import guru.springframework.spr5didemo.controllers.InyeccionMediantePropiedadController;
 import guru.springframework.spr5didemo.controllers.InyeccionMedianteSetterController;
 import guru.springframework.spr5didemo.controllers.MyController;
+import guru.springframework.spr5didemo.controllers.UsingOfProfiledInjectedServicesController;
 
 @SpringBootApplication
 public class Spr5DiDemoApplication {
@@ -15,12 +16,15 @@ public class Spr5DiDemoApplication {
 	public static void main(String[] args) {
 		ApplicationContext ctx = SpringApplication.run(Spr5DiDemoApplication.class, args);
 		
-		MyController controller = (MyController) ctx.getBean("myController");
-		controller.hello();
+		MyController basicController = (MyController) ctx.getBean("myController");
+		basicController.hello();
 		
 		System.out.println(ctx.getBean(InyeccionMediantePropiedadController.class).sayHello());
 		System.out.println(ctx.getBean(InyeccionMedianteSetterController.class).sayHello());
 		System.out.println(ctx.getBean(InyeccionMedianteConstructorController.class).sayHello());
+		
+		UsingOfProfiledInjectedServicesController profiled = (UsingOfProfiledInjectedServicesController) ctx.getBean("profiledController");
+		System.out.println(profiled.sayHello());
 	}
 
 }
